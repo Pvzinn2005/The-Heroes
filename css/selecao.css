@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff0000 50%, #0000ff 50%);
+    position: relative; /* Necessário para usar posicionamento absoluto nos botões */
+}
+
+/* Botões */
+.bnt {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    position: absolute; /* Posicionamento absoluto para cada botão */
+}
+
+/* Botão Marvel */
+.marvel .bnt {
+    background-color: rgba(157, 10, 10, 0.7);
+    top: 50%; /* Posição inicial do botão Marvel */
+    right: 60%;
+    transform: translateX(-60%);
+}
+
+.marvel .bnt:hover {
+    background-color: rgb(170, 7, 7);
+}
+
+/* Botão DC */
+.dc .bnt {
+    background-color: rgba(8, 8, 159, 0.986);
+    bottom: 42%; /* Posição inicial do botão DC */
+    left: 70%;
+    transform: translateX(-60%);
+}
+
+.dc .bnt:hover {
+    background-color: rgb(27, 27, 129);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    /* Ajustes para telas de smartphones em modo retrato */
+    body {
+        background: linear-gradient(135deg, #ff0000 50%, #0000ff 50%); /* Gradiente ajustado para telas menores */
+    }
+
+    .marvel .bnt {
+        top: 20%; /* Coloca o botão Marvel na parte vermelha */
+        right: 20%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        font-size: 2em;
+    }
+
+    .dc .bnt {
+        bottom: 10%; /* Coloca o botão DC na parte azul */
+        left: 60%;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        font-size: 3em;
+    }
+}
